@@ -1,0 +1,8 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    schema: db/schema.sql
+    url: jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true
+    username: root
+    password: 123456
