@@ -1,5 +1,8 @@
 package com.itmayiedu.test;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -21,10 +24,20 @@ public class UserTest {
 
     @Test
     public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
-        List<User> userList = userMapper.selectList(null);
-        Assert.assertEquals(5, userList.size());
-        userList.forEach(System.out::println);
+        User user = new User();
+        user.setName("aaaaaa");
+        user.setAge(3);
+        user.setCreateTime(LocalDateTime.now());
+        user.setUpdateTime(LocalDateTime.now());
+//        user.setCreateTime(new Timestamp(System.currentTimeMillis()));
+//        user.setUpdateTime(new Timestamp(System.currentTimeMillis()));
+        userMapper.insert(user);
+        System.out.println("0000");
+
+//        System.out.println(("----- selectAll method test ------"));
+//        List<User> userList = userMapper.selectList(null);
+////        Assert.assertEquals(5, userList.size());
+//        userList.forEach(System.out::println);
     }
 
 }

@@ -1,41 +1,24 @@
 package com.itmayiedu.entity;
 
+import lombok.Data;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+@Data
 public class User {
 	private Long id;
 	private String name;
 	private Integer age;
 	private String email;
 
-	public Long getId() {
-		return id;
-	}
+	private LocalDateTime createTime;
+	private LocalDateTime updateTime;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	private Date createTime;
+//	private Date updateTime;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
+//	private Timestamp createTime;
+//	private Timestamp updateTime;
 }

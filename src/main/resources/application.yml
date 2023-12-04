@@ -1,8 +1,10 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.mariadb.jdbc.Driver
     schema: db/schema.sql
-    url: jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true
+#    url: jdbc:mysql://192.168.209.212:30592/liuwq?autoReconnect=true
+    url: jdbc:mariadb://192.168.209.212:30592/liuwq?autoReconnect=true
     username: root
-    password: 123456
+    password: gsMq4wN86x

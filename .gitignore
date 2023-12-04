@@ -1,0 +1,24 @@
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/dist/lib
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.pyc
+*.pyo
+*.rbc
+*.hprof
+.git
+.hg
+.svn
+CVS
+.DS_Store
+vssver.scc
+vssver2.scc
+
