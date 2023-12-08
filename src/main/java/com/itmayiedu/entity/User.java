@@ -2,8 +2,6 @@ package com.itmayiedu.entity;
 
 import lombok.Data;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,6 +13,8 @@ public class User {
 
 	private LocalDateTime createTime;
 	private LocalDateTime updateTime;
+
+	private Long createTimestamp;
 
 //	private Date createTime;
 //	private Date updateTime;

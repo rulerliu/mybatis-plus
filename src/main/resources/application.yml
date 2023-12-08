@@ -1,10 +1,17 @@
 # DataSource Config
 spring:
   datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: org.mariadb.jdbc.Driver
     schema: db/schema.sql
+    url: jdbc:mysql://localhost:3306/test?autoReconnect=true
 #    url: jdbc:mysql://192.168.209.212:30592/liuwq?autoReconnect=true
-    url: jdbc:mariadb://192.168.209.212:30592/liuwq?autoReconnect=true
+#    url: jdbc:mariadb://192.168.209.212:30592/liuwq?autoReconnect=true
+#    username: root
+#    password: gsMq4wN86x
     username: root
-    password: gsMq4wN86x
+    password: 123456
+
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/mapper/*.xml
+  type-aliases-package: com.itmayiedu.entity

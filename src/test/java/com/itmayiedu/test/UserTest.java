@@ -1,19 +1,17 @@
 package com.itmayiedu.test;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
-
-import org.junit.Assert;
+import cn.hutool.json.JSONUtil;
+import com.itmayiedu.entity.User;
+import com.itmayiedu.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.CollectionUtils;
 
-import com.itmayiedu.entity.User;
-import com.itmayiedu.mapper.UserMapper;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,6 +36,22 @@ public class UserTest {
 //        List<User> userList = userMapper.selectList(null);
 ////        Assert.assertEquals(5, userList.size());
 //        userList.forEach(System.out::println);
+    }
+
+    @Test
+    public void test2() {
+        Long resourceInstanceMinCreateTimestamp = null;
+        while (true) {
+            List<User> resourceInstanceList = userMapper.getListByMinCreateTimestamp(resourceInstanceMinCreateTimestamp, 4);
+            if (CollectionUtils.isEmpty(resourceInstanceList)) {
+                break;
+            }
+            //标签记录法，记录上次查询过的create_timestamp
+            resourceInstanceMinCreateTimestamp = resourceInstanceList.get(resourceInstanceList.size() - 1).getCreateTimestamp();
+            System.out.println(JSONUtil.toJsonStr(resourceInstanceList));
+
+
+        }
     }
 
 }

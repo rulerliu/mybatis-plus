@@ -16,3 +16,6 @@ INSERT INTO user (id, name, age, email,create_time, update_time) VALUES
 (3, 'Tom', 28, 'test3@baomidou.com', now(), now()),
 (4, 'Sandy', 21, 'test4@baomidou.com', now(), now()),
 (5, 'Billie', 24, 'test5@baomidou.com', now(), now());
+
+alter table user add column create_timestamp bigint(11) null default null;
+update resource_instance set create_timestamp = UNIX_TIMESTAMP(create_time)*1000;
